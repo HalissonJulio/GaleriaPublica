@@ -10,7 +10,7 @@
         android:id="@+id/btNav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/purple_700"
+        android:background="@color/new_orange"
         android:foregroundTint="@null"
         app:backgroundTint="@null"
         app:itemBackground="@null"
