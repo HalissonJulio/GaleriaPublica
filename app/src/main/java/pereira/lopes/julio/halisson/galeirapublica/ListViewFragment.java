@@ -46,6 +46,9 @@ public class ListViewFragment extends Fragment {
         return fragment;
     }
 
+    public static ListViewFragment newInstance() {
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
