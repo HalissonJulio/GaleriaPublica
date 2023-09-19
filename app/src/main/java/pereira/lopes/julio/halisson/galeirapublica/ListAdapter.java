@@ -8,11 +8,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.paging.PagingDataAdapter;
 import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
 
-public class ListAdapter extends PagingDataAdapter<ImageData, MyViewHolder> {
+public class ListAdapter extends PagingDataAdapter<ImageData, MyViewHolder>{
 
     public ListAdapter(@NonNull DiffUtil.ItemCallback<ImageData> diffCallback) {
         super(diffCallback);
@@ -20,14 +22,15 @@ public class ListAdapter extends PagingDataAdapter<ImageData, MyViewHolder> {
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.list_item, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position){
+
         ImageData imageData = getItem(position);
 
         TextView tvName = holder.itemView.findViewById(R.id.tvName);
@@ -43,4 +46,5 @@ public class ListAdapter extends PagingDataAdapter<ImageData, MyViewHolder> {
         ImageView imageView = holder.itemView.findViewById(R.id.imThumb);
         imageView.setImageBitmap(thumb);
     }
+
 }
